@@ -30,14 +30,12 @@
         <property name="password">
             <value>${jdbc.password}</value>
         </property>
-        <!--  
         <property name="testOnBorrow">
             <value>true</value>
         </property>
         <property name="validationQuery">
             <value>select 1 from dual</value>
         </property>
-        -->
 		<property name="minIdle" value="0" />
 		<property name="maxActive" value="30"/>
 		<property name="numTestsPerEvictionRun" value="-1" />
@@ -46,5 +44,7 @@
     </bean>
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="sql" class="java.lang.String">
     </bean>
 </beans>

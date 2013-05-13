@@ -55,6 +55,25 @@
 			<artifactId>geronimo-servlet_3.0_spec</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+
+			<groupId>com.taobao.hsf</groupId>
+
+			<artifactId>hsf.notify.spring</artifactId>
+
+			<version>1.4.7.8</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>com.taobao.notify</groupId>
+
+			<artifactId>notify-tr-client</artifactId>
+
+			<version>1.7.8</version>
+
+		</dependency>
 	</dependencies>
 	<properties>
 		<jersey-version>1.9-ea02</jersey-version>
