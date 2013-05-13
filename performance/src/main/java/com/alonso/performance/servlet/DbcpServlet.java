@@ -2,7 +2,6 @@ package com.alonso.performance.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,9 +19,11 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 public class DbcpServlet extends HttpServlet {
 	private static final long serialVersionUID = 6632177218196304178L;
 	private JdbcTemplate jdbcTemplate;
+
 	@Override
 	public void init() throws ServletException {
-		WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+		WebApplicationContext context = WebApplicationContextUtils
+				.getWebApplicationContext(getServletContext());
 		jdbcTemplate = (JdbcTemplate) context.getBean("jdbcTemplate");
 	}
 
@@ -41,7 +42,8 @@ public class DbcpServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String sql = "select count(*) from price where id=" + System.currentTimeMillis();
+		String sql = "select count(*) from lpm_operation_log where id="
+				+ System.currentTimeMillis();
 		int count = jdbcTemplate.queryForInt(sql);
 		request.setAttribute("count", count);
 		request.setAttribute("sql", sql);
